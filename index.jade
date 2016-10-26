@@ -1,0 +1,130 @@
+doctype html
+html
+	head
+			title Quick wins with node and AMP
+			meta(charset='utf-8')
+			script(src='slides.js')
+			link(href='https://fonts.googleapis.com/css?family=Bangers|Open+Sans:400,700' rel='stylesheet' type='text/css')
+			link(href='styles.css'  rel='stylesheet' type='text/css')
+		body
+			section.slides.layout-regular.template-default
+
+				article
+					p Yaay the projector works
+					small You may need to zoom out a little if the text is too big
+
+				article.first
+					h1 node + AMP
+					br
+					p
+						a(href='http://twitter.com/mikemaccana',style="text-decoration: none;") @mikemaccana
+
+				article.plain
+					img(src="images/ev-https-proves-identity.png")
+					h1(style="font-size:256px; font-family: Calibri;") CertSimple
+					p Fast, hassle-free EV HTTPS
+
+				article
+					h1 We have a blog
+					img(src="images/blog.png")
+					code(style="color: white; margin-top: 48px; ") helpingPeopleBeAwesome == gettingCustomers
+
+				article
+					h1(style='font-size: 384px; white-space:pre; line-height: 256px;')
+						| Accelerated
+						| Mobile
+						| Pages
+
+				article
+					h1 AMP
+					img(src="images/amp-serp.jpg")
+
+				article
+					h1 What is AMP?
+					ul.build
+						li One HTTP request to load entire page
+						li Consolidated DOM changes
+						li Viewport based prerendering
+						li Official AMP 'extensions' add analytics, ad support, etc.
+						li Third party JS only in iframes
+						li Google CDN
+
+				article
+					h1 Does AMP work?
+					small Stats from Google I/O 2016
+					ul.build
+						li Mean load time is 700ms
+						li Worst case for 99% of sites is 8 secs, vs 22 secs
+						li Live on 460K domains
+
+				article
+					h1 What do you lose?
+					ul.build
+						li Ability to do 3rd party JS outside iframes
+						small Support for SOME analytics, embedded Tweets / FB, and various UI components in 'AMP extensions'
+						li Forms (but they're coming soon!)
+
+
+				article
+					h1 AMP and SEO
+					ul.build
+						li AMP is NOT a ranking factor.
+						small John Mueller, Webmaster Trends Analyst for Google, confirmed in G+ hangout event.
+						li Page speed IS a ranking factor
+						li AMP content IS top of the SERP
+
+				article
+					h1 Realpolitik
+					ul.build
+						li Fast content is better for users
+						li Fast AMP content is favoured
+
+				article
+					h1 AMP is money
+
+				article
+					h1 For node
+					ul.build
+						li If you're using Ghost 0.10.0 or newer AMP is built in
+						li We were using a custom built express blog
+
+				article
+					h1 Wait a sec
+					ul.build
+						li Express allows us to sub out parent templates pretty easily
+						li Express has cool injectable middleware (and hapi has plugins)
+						li Node has the best server-side DOM implementation
+
+				article
+					h1 Long story made short:
+					img(src='images/amps-in-the-trunk.png')
+					a(href="https://www.npmjs.com/package/amps-in-the-trunk" target=_blank) AMPs in the Trunk (node / express AMP package)
+
+				article
+					h1.big We get our existing CMS with:
+					ul.build
+						li AMP doctype, embedded minimal styling
+						li img tags converted to amp-img
+						li Media sizes automatically set
+						li Overrides for SVG
+						li Inline styles cleaned out
+						li Without changing anything on our backend
+
+				article
+					h1 We use this in production at CertSimple
+
+				article
+					h1 Thanks
+					h2(style="font-size:128px;") I will tweet links now.
+					p @mikemaccana
+					p certsimple.com
+
+				article
+					h1 Links
+					a(href="https://www.npmjs.com/package/amps-in-the-trunk" target=_blank) AMPs in the Trunk (node / express AMP package)
+					a(href="http://j.mp/amp-speed" target=_blank) AMP speed
+					a(href="https://www.youtube.com/watch?v=i2_lAEzmOPo" target=_blank) AMP demo
+					a(href="https://www.youtube.com/watch?v=cfekj564rs0/" target=_blank) How AMP achieves its speed - Google I/O 2016
+					a(href="https://www.wired.com/2016/02/google-will-now-favor-pages-use-fast-loading-tech/" target=_blank) Wired article on AMP
+					a(href="https://www.youtube.com/watch?v=6JgkxY11qDE" target=_blank) AMPs Anatomy
+					a(href="https://developers.google.com/web/fundamentals/performance/rail" target=_blank) RAIL
